@@ -3,134 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Form Manajemen Inventory • NORXEL</title>
+  <title>Portal Form Manajemen Inventory</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
     body {
-      font-family: 'Inter', sans-serif;
       box-sizing: border-box;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1b1b1b 100%);
+      transition: background 0.5s ease;
     }
-
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: 0.3s ease;
+    .card-hover {
+      transition: all 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 26px -6px rgba(0, 0, 0, 0.4);
+    .card-hover:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.15);
     }
-
-    .fade {
-      animation: fadeIn 0.9s ease forwards;
-      opacity: 0;
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Dark mode preference */
+    @media (prefers-color-scheme: dark) {
+      .gradient-bg {
+        background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      }
     }
   </style>
 </head>
-
-<body class="min-h-screen flex flex-col">
-
-  <!-- HEADER -->
-
-    <h1 class="text-4xl md:text-5xl font-bold text-white tracking-wide">
-      Portal Form Manajemen Inventory
-    </h1>
-
-    <p class="text-white/70 text-lg mt-3 max-w-xl mx-auto">
-      Akses cepat untuk permintaan barang, penarikan mesin, dan order part teknisi
-    </p>
-  </header>
-
-  <!-- FORM CARDS -->
-  <main class="container mx-auto px-6 pb-20 fade">
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <!-- SO BARANG -->
-      <div class="card rounded-3xl p-10 text-center">
-        <div class="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg class="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0
-              01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-        </div>
-
-        <h3 class="text-2xl font-bold text-white mb-2">Permintaan SO Barang</h3>
-        <p class="text-white/70 mb-6">Form permintaan Sales Order barang</p>
-
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLm0ckDi7OIq1z-W_XAeX1JjZsYEb11sDe7LxyE_OppdfnQg/viewform"
-           class="block bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition">
-          Buka Form
-        </a>
-      </div>
-
-      <!-- PENARIKAN BARANG/MESIN -->
-      <div class="card rounded-3xl p-10 text-center">
-        <div class="w-20 h-20 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg class="w-10 h-10 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M9 21V9l-5-2.5" />
-          </svg>
-        </div>
-
-        <h3 class="text-2xl font-bold text-white mb-2">Penarikan Barang/Mesin</h3>
-        <p class="text-white/70 mb-6">Form proses penarikan barang atau mesin</p>
-
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6xN4oEO9O1tE_9jL4L7kH-vHN4ssGZ7ycLyCyVGJ9TWvoCA/viewform"
-           class="block bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-semibold transition">
-          Buka Form
-        </a>
-      </div>
-
-      <!-- ORDER PART -->
-      <div class="card rounded-3xl p-10 text-center">
-        <div class="w-20 h-20 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg class="w-10 h-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0
-              002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0
-              001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0
-              00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0
-              00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0
-              00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0
-              00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0
-              001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07
-              2.572-1.065z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        </div>
-
-        <h3 class="text-2xl font-bold text-white mb-2">Order Part Teknisi</h3>
-        <p class="text-white/70 mb-6">Form order part & komponen teknisi</p>
-
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScYksVHt-bscgX6SNzZkO0wjvZaA-dw9rzwlTi0XvLYxJd4sw/viewform"
-           class="block bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold transition">
-          Buka Form
-        </a>
-      </div>
-
+<body class="min-h-screen gradient-bg flex flex-col">
+  <div class="container mx-auto px-4 py-12 flex-grow">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Form Manajemen Inventory
+      </h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto">
+        Akses cepat ke semua formulir untuk permintaan barang, penarikan, dan order part oleh Teknisi
+      </p>
     </div>
-  </main>
 
-  <!-- FOOTER -->
-  <footer class="text-center pb-12 fade">
-    <p class="text-white/50">Created by <strong>Suryo</strong> • 2025</p>
-    <a href="/" class="text-white/50 hover:text-white underline mt-3 block">
-    </a>
-  </footer>
+    <!-- Form Cards -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Permintaan SO Barang -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Permintaan SO Barang</h3>
+          <p class="text-gray-600 mb-6">
+            Formulir untuk mengajukan permintaan Sales Order barang dan inventori
+          </p>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLm0ckDi7OIq1z-W_XAeX1JjZsYEb11sDe7LxyE_OppdfnQg/viewform"
+          target="_blank" rel="noopener noreferrer"
+          class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl text-center transition-colors duration-200">
+          Buka Form
+        </a>
+      </div>
 
+      <!-- Penarikan Barang/Mesin -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M9 21V9l-5-2.5" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Penarikan Barang/Mesin</h3>
+          <p class="text-gray-600 mb-6">
+            Formulir untuk proses penarikan barang atau mesin dari gudang
+          </p>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6xN4oEO9O1tE_9jL4L7kH-vHN4ssGZ7ycLyCyVGJ9TWvoCA/viewform"
+          target="_blank" rel="noopener noreferrer"
+          class="block w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-xl text-center transition-colors duration-200">
+          Buka Form
+        </a>
+      </div>
+
+      <!-- Permintaan/Order Part oleh Teknisi -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Order Part Teknisi</h3>
+          <p class="text-gray-600 mb-6">
+            Formulir khusus untuk teknisi mengorder part dan komponen
+          </p>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScYksVHt-bscgX6SNzZkO0wjvZaA-dw9rzwlTi0XvLYxJd4sw/viewform"
+          target="_blank" rel="noopener noreferrer"
+          class="block w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-xl text-center transition-colors duration-200">
+          Buka Form
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="text-center mt-16">
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto">
+        <p class="text-white/90 text-lg">
+          💡 <strong>Tips:</strong> Semua form akan terbuka di tab baru. Pastikan Anda sudah login ke akun Google untuk mengakses formulir.
+        </p>
+        <p class="text-white/70 mt-3">Created by <strong>Suryo</strong> • 2025</p>
+      </div>
+
+      <!-- Link kembali -->
+      <div class="mt-6">
+        <a href="/" class="text-white underline hover:text-white/80">⬅ Terima Kasih</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
-
-
-
 
 
